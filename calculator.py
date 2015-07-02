@@ -39,33 +39,35 @@ def calculate_numbers():
         if len(token_list) > 2:
             num2 = int(token_list[2])
 
-        if num2 == None:
-            if operand == "square":
-                print square(num1)
-            elif operand == "cube":
-                print cube(num1)
-            else: 
-                print "You need two numbers for that, friend."
-        if num2 != None:
-            pass:
-                if operand == "+":
-                    print add(num1, num2)
-                elif operand == "-":
-                    print subtract(num1, num2)
-                elif operand == "*":
-                    print multiply(num1, num2)
-                elif operand == "/":
-                    print divide(num1, num2)
-                elif operand == "pow":
-                    print power(num1, num2)
-                elif operand == "mod":
-                    print mod(num1, num2)
-
-
-        elif operand == "q":
-            break
-        else:
-            print "Yeah, no."
+        
+        while string != None:
+            try:
+                if operand == "q":
+                    break
+                if num2 == None:
+                    if operand == "square":
+                        print square(num1)
+                    elif operand == "cube":
+                        print cube(num1)
+                    else: 
+                        print "You need two numbers for that, friend."
+                if num2 != None:
+                    if operand == "+":
+                        print add(num1, num2)
+                    elif operand == "-":
+                        print subtract(num1, num2)
+                    elif operand == "*":
+                        print multiply(num1, num2)
+                    elif operand == "/":
+                        print divide(num1, num2)
+                    elif operand == "pow":
+                        print power(num1, num2)
+                    elif operand == "mod":
+                        print mod(num1, num2)
+                    else:
+                        print "That's not an operand."
+            except ValueError:
+                print "Not happening."
 
 
 calculate_numbers()
